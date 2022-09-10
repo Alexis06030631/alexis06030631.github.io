@@ -1,0 +1,266 @@
+@import url(./global.css);
+
+body {
+    --background-contact-line: #5b5a5ea3;
+    background: var(--background);
+}
+
+@media screen and (max-width: 500px) {
+    label[data-after]::after {
+        content: none;
+    }
+
+    .contact_div .field:not(.long) {
+        width: calc((100% - 20px)/2);
+    }
+}
+
+.contact_div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 68px;
+    justify-content: space-between;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body.seperate .contact_div {
+    position: absolute;
+    padding: 5%;
+}
+
+.contact_div .title {
+    width: 100%;
+    font-size: 39px;
+    font-size: clamp(1.7rem, 10vw, 2.45rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 80px;
+    font-family: var(--secFont);
+}
+
+.contact_div .field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 65px;
+    padding-bottom: 13px;
+}
+
+.contact_div .notIput {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.contact_div .field label {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+
+.contact_div .reopen {
+    color: #716f7d;
+    opacity: .8;
+    margin-top: 30px;
+    font-size: 86%;
+}
+
+.contact_div .reopen:hover {
+    opacity: 1;
+    color: #cfcbec;
+}
+
+[data-after]::after {
+    content: " " attr(data-after);
+}
+
+@media screen and (min-width: 1115px) {
+    .contact_div .field label[for="email"][data-after]::after {
+        content: " (optional but required if you want a reply)";
+    }
+}
+
+.contact_div .field:not(.long) {
+    width: calc((100% - 30px)/2);
+}
+
+.contact_div .field.message {
+    margin-bottom: 78px;
+    padding-bottom: 0;
+    max-width: inherit;
+
+}
+
+.contact_div :is(input, textarea) {
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+    padding: 0 5px;
+    font-size: 18px;
+    background: 0 0;
+    line-height: 1.2;
+    font-weight: 500;
+    border: none;
+    outline: none;
+}
+
+.contact_div .field input {
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact_div .field .input-line {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background: var(--background-contact-line);
+}
+
+.contact_div .field:not(.long) .input-line {
+    bottom: -2px;
+    left: 0;
+}
+
+.contact_div textarea {
+    padding-top: 9px;
+    margin-top: 10px;
+    min-height: 110px;
+    border-radius: 5px;
+    padding-bottom: 13px;
+}
+
+.contact_div .submit button {
+    height: 50px;
+    display: flex;
+    font-size: 16px;
+    padding: 0 20px;
+    cursor: pointer;
+    line-height: 1.2;
+    min-width: 160px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 10px 0 #0000000f;
+    background: linear-gradient(150deg, #3f3b44, #3c3748);
+    gap: 11px;
+    border: none;
+}
+
+.contact_div .submit button svg {
+    width: 20px;
+    height: auto;
+}
+
+@media screen and (max-width: 365px) {
+    .contact_div .field:not(.long) {
+        width: calc((100% - 20px)/2);
+    }
+}
+
+@media only screen and (min-width: 1060px) {
+    body.seperate .contact_div {
+        padding: 0 20%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -10px;
+}
+.social-buttons__button {
+    margin: 10px 5px 0;
+}
+
+.social-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    width: 70px;
+    height: 70px;
+    text-decoration: none;
+    border-radius: 100%;
+    background: #fff;
+    text-align: center;
+}
+.social-button::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+.social-button:focus, .social-button:hover {
+    color: #fff;
+}
+.social-button:focus::after, .social-button:hover::after {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    margin-left: calc(-50% - 1px);
+}
+.social-button i,
+.social-button svg {
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+.social-button i {
+    font-size: 28px;
+}
+.social-button svg {
+    height: 80%;
+    width: 80%;
+}
+.social-button--github {
+    color: #000000;
+}
+.social-button--github::after {
+    background: #000000;
+}
+.social-button--github:hover > svg {
+    fill: #FFFFFF;
+    transition: 0s;
+}
+.social-button--instagram {
+    color: #e4405f;
+}
+.social-button--instagram::after {
+    background: #e4405f;
+}
