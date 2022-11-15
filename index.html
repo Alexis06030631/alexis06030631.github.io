@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Home - Alexis</title>
-	<link rel="stylesheet" !href="./assets/css/style.css" />
+	<link rel="stylesheet" href="./assets/css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
 	<link href="/assets/fontAwesome/css/all.css" rel="stylesheet" />
@@ -17,46 +17,83 @@
 		}
 	</script>
 </head>
-<body class="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 font-sans">
-	<!-- Navbar -->
-	<nav class="absolute top-0 z-30 w-full px-4 py-2 mt-2 mb-4 shadow-none lg:flex-nowrap lg:justify-start">
-		<div class="rounded-xl bg-cover bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-gray-400 to-gray-200 dark:from-slate-900 dark:via-slate-800 dark:to-slate-800 py-2 md:py-4">
-			<div class="container px-4 mx-auto md:flex md:items-center">
+<body class="antialiased text-slate-500 dark:text-black bg-white dark:bg-slate-900 font-sans transition-colors duration-300">
+	<header class="z-50 header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02">
+		<!-- logo -->
+		<h1 class="w-3/12">
+			<a href="" class="hover:text-blue-500 duration-200 font-bold" style="font-size: 1.4rem; font-family: CarmenRegular,serif">
+				<svg viewBox="0 0 211.62 236.14" class="inline mr-2 h-12 w-auto">
+					<defs>
+						<style>
+							.cls-1,.cls-2{
+								fill:none;
+								stroke:currentColor;
+								stroke-miterlimit:10;
+							}
+							.cls-1{
+								stroke-width:5px;
+							}
+						</style>
+					</defs>
+					<path class="cls-1" d="M183.6,58.41a42.52,42.52,0,0,1-24.71,72.24,56.07,56.07,0,0,0-3.28-13.09,28.36,28.36,0,1,0-22.1-9.07l0,0a42.52,42.52,0,1,1-36.19-12.9,56.18,56.18,0,0,0,3.91,14.7,28.32,28.32,0,1,0,22.27,8.21A42.51,42.51,0,1,1,183.6,58.41Z"/>
+					<circle class="cls-1" cx="102.95" cy="137.5" r="14.17"/>
+					<circle class="cls-1" cx="152.99" cy="88.24" r="14.17"/>
+					<path class="cls-1" d="M154.44,7.44c-6.13-6.13-15.6-6.62-21.13-1.09L4.79,134.87a2.64,2.64,0,0,1,.2,3.72l94,94c5.54-5.54,5-15-1.09-21.13l-71.8-71.8a2.11,2.11,0,0,0,.3-.37,2.71,2.71,0,0,0-.49-3.36Z"/>
+					<circle class="cls-1" cx="158.6" cy="173.1" r="1.42"/>
+					<circle class="cls-1" cx="187.72" cy="143.02" r="1.42"/>
+					<circle class="cls-1" cx="197.74" cy="132.99" r="1.42"/>
+					<circle class="cls-1" cx="207.7" cy="122.91" r="1.42"/>
+					<circle class="cls-1" cx="138.56" cy="193.15" r="1.42"/>
+					<circle class="cls-1" cx="148.51" cy="183.19" r="1.42"/>
+					<circle class="cls-2" cx="24.15" cy="137.72" r="2.5"/>
+					<circle class="cls-2" cx="3" cy="136.68" r="2.5"/>
+				</svg> Alexis
+			</a>
+		</h1>
 
-				<div class="flex justify-between items-center">
-					<a href="#" class="font-bold text-xl text-black dark:text-white">Alexis</a>
-					<button class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
-						<i class="fas fa-bars"></i>
-					</button>
-				</div>
+		<!-- navigation -->
+		<nav class="nav font-semibold text-lg">
+			<ul class="flex items-center">
+				<a href="">
+					<li class="p-4 border-b-2 border-slate-800 hover:border-blue-500 hover:text-blue-500 duration-200 cursor-pointer active">
+						Accueil
+					</li>
+				</a>
+				<a href="">
+					<li class="p-4 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 duration-200 cursor-pointer">
+						Projets
+					</li>
+				</a>
+				<a href="">
+					<li class="p-4 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 duration-200 cursor-pointer">
+						A propos de moi
+					</li>
+				</a>
+				<a href="">
+					<li class="p-4 border-b-2 border-transparent hover:border-blue-500 hover:text-blue-500 duration-200 cursor-pointer">
+						Contact
+					</li>
+				</a>
+			</ul>
+		</nav>
 
-				<div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0 text-white" id="navbar-collapse">
-					<a href="#" class="p-2 px-4 mx-2 rounded-full border border-gray-700 hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300 bg-gray-900">Home</a>
-					<a href="#" class="p-2 px-4 mx-2 rounded-full border border-gray-700 hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">About</a>
-					<a href="#" class="p-2 px-4 mx-2 rounded-full border border-gray-700 hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300">Features</a>
-				</div>
-
-				<div class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0">
-					<button onclick="window.open('https://github.com/Alexis06030631', '_blank');" class="mx-1 w-9 h-9 text-black dark:text-white rounded-full border border-gray-700 hover:bg-white dark:hover:text-black transition-colors duration-300"><i class="fa-brands fa-github"></i></button>
-					<button onclick="toggleDarkMode()" class="mx-1 w-9 h-9 text-black dark:text-white rounded-full border border-gray-700 hover:bg-white dark:hover:text-black transition-colors duration-300" id="darkModeChanger"><i class="fa-duotone fa-sun-bright"></i></button>
-				</div>
-			</div>
+		<!-- buttons --->
+		<div class="w-3/12 flex justify-end">
+			<button class="p-1 hover:text-blue-800 duration-200 w-9 h-9" onclick="toggleDarkMode()" id="darkModeChanger"><i class="fa-lg fa-solid fa-sun-bright"></i></button>
+			<button class="p-1 hover:text-blue-800 duration-200 w-9 h-9" onclick="window.open('https://github.com/Alexis06030631', '_blank');"><i class="fa-lg fa-brands fa-github"></i></button>
 		</div>
-	</nav>
-	<main class="mt-0 transition-all duration-200 ease-soft-in-out">
-		<section class="min-h-screen mb-32">
-			<div class="relative flex items-center align-center pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl">
-				<span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-60"></span>
-				<div class="container z-10 mx-auto">
-					<div class="flex flex-wrap justify-center -mx-3">
-						<div class="w-full max-w-full px-3 mx-auto mt-0 text-center lg:flex-0 shrink-0 lg:w-5/12">
-							<h1 class="mt-12 mb-2 text-white">Welcome!</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+	</header>
+	<div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+		<div id='title'>
+			<span>WELCOME</span>
+			<br>
+			<span>IN MY WEBSITE</span>
+		</div>
+
+	</div>
 	<script type="text/javascript" src="./assets/js/theme.js"></script>
 </body>
 </html>
