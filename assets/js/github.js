@@ -43,6 +43,7 @@ function getRepos() {
 async function addCards(){
     const example_card = document.getElementById('card_elem')
     const repos = await getRepos()
+    repos.sort((a, b) => b?.description?.length - a?.description?.length)
 
 
     for(const repo of repos) {
@@ -57,19 +58,16 @@ async function addCards(){
         card.querySelector('[author_card]').innerText = repo.owner.login
         const date = new Date(repo.updated_at)
         card.querySelector('[date_card]').innerText = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
-        card.querySelector('[commits_cards]').innerText = repo.default_branch
 
         // Set urls get a from children attribute
-        card.querySelector('[title_card]').parentElement.href = repo.svn_url
+        card.querySelector('[title_card]').href = repo.svn_url
         card.querySelector('[avatar_card]').parentElement.href = repo.owner.avatar_url
         card.querySelector('[author_card]').href = repo.owner.html_url
 
+        // reorganize topics by char length
+        repo.topics.sort((a, b) => b.length - a.length)
         repo.topics.forEach(topic => {
-            const topic_elem = `<span class="inline-flex items-center leading-none px-2.5 py-1.5 text-sm font-medium text-slate-200 rounded-full border border-slate-800">
-                                    <svg class="mr-1.5 h-2 w-2 brand-react" fill="currentColor" viewBox="0 0 8 8">
-\t                                    <circle cx="4" cy="4" r="3"></circle>
-                                    </svg>${topic}
-                                </span>`
+            const topic_elem = `<span class="inline-block px-2 py-1 leading-none bg-gray-700 text-slate-200 rounded-full font-semibold uppercase tracking-wide text-xs mr-2">${topic}</span>`
             card.querySelector('[tags]').innerHTML += (topic_elem)
         })
 
@@ -77,6 +75,11 @@ async function addCards(){
         // Add the card to the page
         document.getElementById('cards').appendChild(card)
     }
+
+    // Remove the example card
+    example_card.remove()
+    document.getElementById('projects_loader').remove()
+    document.getElementById('loader_anim').classList.remove('animate-pulse')
 
 
 
