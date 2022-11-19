@@ -43,7 +43,7 @@ function getRepos() {
 async function addCards(){
     const example_card = document.getElementById('card_elem')
     const repos = await getRepos()
-    repos.sort((a, b) => b?.description?.length - a?.description?.length)
+    repos.sort((a, b) => new Date(b?.updated_at) - new Date(a?.updated_at))
 
 
     for(const repo of repos) {
