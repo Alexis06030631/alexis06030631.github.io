@@ -52,7 +52,7 @@ async function addCards(){
         console.log(repo)
 
         // Set the card's data
-        card.querySelector('[title_card]').innerText = repo.name
+        card.querySelector('[title_card]').innerHTML = `${repo.name}${repo.archived ? '<span class="text-sm"> - <span class="text-red-500">Archived</span></span>' :''}`
         card.querySelector('[description_card]').innerText = repo.description
         card.querySelector('[avatar_card]').src = repo.owner.avatar_url
         card.querySelector('[author_card]').innerText = repo.owner.login
@@ -70,6 +70,17 @@ async function addCards(){
             const topic_elem = `<span class="inline-block px-2 py-1 leading-none bg-gray-700 text-slate-200 rounded-full font-semibold uppercase tracking-wide text-xs mr-2">${topic}</span>`
             card.querySelector('[tags]').innerHTML += (topic_elem)
         })
+
+        if(repo.homepage){
+            card.querySelector('[buttons]').innerHTML += `<a href="${repo.homepage}" class="inline-block bg-blue-500 mr-2 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+						<i class="fa-lg fa-solid fa-globe"></i> Website
+					</a>`
+        }
+
+        card.querySelector('[buttons]').innerHTML += `<a href="${repo.html_url}" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded">
+						<i class="fa-lg fa-brands fa-github"></i> See project
+					</a>`
+
 
 
         // Add the card to the page
